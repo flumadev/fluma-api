@@ -53,9 +53,9 @@ async function sendEmail(params) {
   } catch (error) {
     console.error(error)
 
-      console.error(error?.response?.body)
+    console.error(error?.response?.body)
   }
- 
+
 }
 
 export {
