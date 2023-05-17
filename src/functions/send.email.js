@@ -2,7 +2,7 @@ import 'dotenv/config';
 import sgMail from '@sendgrid/mail'
 /**
  * 
- * @param {{ company:string; email:string; interest: string; name: string}} params 
+ * @param {{ company:string; email:string; interest: string; name: string; phone: string}} params 
  */
 async function sendEmail(params) {
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
@@ -36,7 +36,7 @@ async function sendEmail(params) {
     content: [
       {
         type: 'text/html',
-        value: `<p>Nome: ${params.name}</p><p>Email: ${params.email}</p><p>Empresa: ${params.company}</p>  <p>Interesse: ${params.interest}</p>`
+        value: `<p>Nome: ${params.name}</p><p>Email: ${params.email}</p><p>Empresa: ${params.company}</p>  <p>Interesse: ${params.phone}</p> <p>Interesse: ${params.interest}</p>`
       }
     ],
   }
